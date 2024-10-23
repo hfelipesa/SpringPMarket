@@ -13,15 +13,13 @@ import org.mapstruct.Mappings;
 
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {
-
     //Categoria a Category
     @Mappings({
-            @Mapping(source="idCategoria", target="idCategory"),
+            @Mapping(source="idCategoria", target="categoryId"),
             @Mapping(source="descripcion", target="category"),
             @Mapping(source="estado", target="active"),
     })
-    Category ToCategory(Categoria categoria);
-
+     Category ToCategory(Categoria categoria);
     //Category a Categoria
     @InheritInverseConfiguration
     @Mapping(target = "productos", ignore = true) //Ignorar la lista de productos

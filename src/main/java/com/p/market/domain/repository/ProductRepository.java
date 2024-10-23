@@ -9,7 +9,7 @@ public interface ProductRepository {
 //Solo nombre de los metodo que cualquier repositorio de productos debe implementar
    List<Product> getAll();
    Optional<List<Product>> getByCategory(int categoryId);
-   List<Product> getScarseProducts(int quantity);
+    Optional<List<Product>> getScarseProducts(int quantity);
    Optional<Product> getProduct(int productId);
 
    Product save(Product product);

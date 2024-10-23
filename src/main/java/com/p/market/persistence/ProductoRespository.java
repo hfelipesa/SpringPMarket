@@ -37,9 +37,9 @@ public class ProductoRespository implements ProductRepository {
     }
 
     @Override
-    public List<Product> getScarseProducts(int quantity) {
-        List<Producto> productos= productoCrudRespository.findByCantidadStockLessThanAndEstado(quantity, true);
-        return mapper.toProducts(productos);
+    public Optional<List<Product> > getScarseProducts(int quantity) {
+        Optional<List<Producto>> productos = productoCrudRespository.findByCantidadStockLessThanAndEstado(quantity,true);
+        return productos.map(prods -> mapper.toProducts(prods));
     }
     @Override
     public Optional<Product> getProduct(int productId) {

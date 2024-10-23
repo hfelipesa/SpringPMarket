@@ -6,6 +6,7 @@ import java.util.List;
 @Entity
 @Table(name = "clientes")
 public class Cliente {
+    @Id
     private String id;
     private String nombre;
     private String apellidos;
