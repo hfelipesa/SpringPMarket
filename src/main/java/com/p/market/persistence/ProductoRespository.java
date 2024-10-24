@@ -12,16 +12,15 @@ import java.util.List;
 import java.util.Optional;
 
 //Clase que se encarga de realizar las consultas a la base de datos
-// implementa la interfaz ProductRepository d
+// implementa la interfaz ProductRepository domain
 @Repository
 public class ProductoRespository implements ProductRepository {
-    //
 
     @Autowired //Inyeccion de dependencias
-    private ProductoCrudRepository productoCrudRespository;
+    private ProductoCrudRepository productoCrudRespository; //Inyeccion de prodictoCrudRepository
 
     @Autowired //Inyeccion de dependencias
-    private ProductMapper mapper; //Mapeo de productos
+    private ProductMapper mapper; //Inyeccion Mapeo de productos
 
     //Metodos que se pueden realizar con la base de datos
     @Override
